@@ -32,7 +32,7 @@ public class Student implements Serializable{
     @Column
     private String lastname;
     @Column
-    private int yearlevel;
+    private int yearLevel;
 
     public int getStudentId() {
         return studentId;
@@ -58,19 +58,19 @@ public class Student implements Serializable{
         this.lastname = lastname;
     }
 
-    public int getYearlevel() {
-        return yearlevel;
+    public int getYearLevel() {
+        return yearLevel;
     }
 
-    public void setYearlevel(int yearlevel) {
-        this.yearlevel = yearlevel;
+    public void setYearlevel(int yearLevel) {
+        this.yearLevel = yearLevel;
     }
 
     public Student(int studentId, String firstname, String lastname, int yearlevel) {
         this.studentId = studentId;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.yearlevel = yearlevel;
+        this.yearLevel = yearlevel;
     }
     public Student(){
         

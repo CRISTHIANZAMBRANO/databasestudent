@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Student Information</h1>
-        <form action="/StudentServlet" method="POST">
+        <form action="./StudentServlet" method="POST">
             <table>
                 <tr>
                     <td>Student ID</td>
