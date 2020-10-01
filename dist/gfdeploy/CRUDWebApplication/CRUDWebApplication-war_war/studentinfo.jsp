@@ -18,19 +18,19 @@
             <table>
                 <tr>
                     <td>Student ID</td>
-                    <td><input type="text" name="studentId" value="${student.studentId}" /></td>
+                    <td><input type="text" name="studentId" value="${stud.studentId}" /></td>
                 </tr>
                 <tr>
                     <td> First Name</td>
-                    <td><input type="text" name="firstname" value="${student.firstname}" /></td>
+                    <td><input type="text" name="firstname" value="${stud.firstname}" /></td>
                 </tr>
                 <tr>
                     <td>Last Name</td>
-                    <td><input type="text" name="lastname" value="${student.lastname}" /></td>
+                    <td><input type="text" name="lastname" value="${stud.lastname}" /></td>
                 </tr>
                 <tr>
                     <td>Year Level</td>
-                    <td><input type="text" name="yearLevel" value="${student.yearLevel}" /></td>
+                    <td><input type="text" name="yearLevel" value="${stud.yearLevel}" /></td>
                 </tr>
                 <tr>
                     <td colspan="2"> 
