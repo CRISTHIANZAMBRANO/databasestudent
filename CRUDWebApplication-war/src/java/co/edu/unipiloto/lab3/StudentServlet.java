@@ -6,6 +6,7 @@
 package co.edu.unipiloto.lab3;
 
 import co.edu.unipiloto.lab3.entity.Student;
+import co.edu.unipiloto.lab3.entity.StudentCursoPK;
 import co.edu.unipiloto.lab3.session.StudentDaoLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -38,6 +39,7 @@ public class StudentServlet extends HttpServlet {
         if(yearLevelStr!=null && !yearLevelStr.equals(""))
             yearLevel=Integer.parseInt(yearLevelStr);
         Student student= new Student(studentId, firstname, lasttname, yearLevel);
+        
         if("Add".equalsIgnoreCase(action)){
             studentDao.addStudent(student);
         }else if("Edit".equalsIgnoreCase(action)){

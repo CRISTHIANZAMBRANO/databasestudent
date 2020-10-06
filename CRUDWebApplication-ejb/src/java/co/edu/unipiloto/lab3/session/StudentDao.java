@@ -30,12 +30,12 @@ public class StudentDao implements StudentDaoLocal {
     }
 
     @Override
-    public void deleteStudent(int studentId) {
+    public void deleteStudent(Integer studentId) {
         em.remove(getStudent(studentId));
     }
 
     @Override
-    public Student getStudent(int studentId) {
+    public Student getStudent(Integer studentId) {
         return em.find(Student.class, studentId);
     }
 

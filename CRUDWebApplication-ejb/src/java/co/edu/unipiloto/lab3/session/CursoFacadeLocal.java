@@ -5,7 +5,7 @@
  */
 package co.edu.unipiloto.lab3.session;
 
-import co.edu.unipiloto.lab3.entity.Student;
+import co.edu.unipiloto.lab3.entity.Curso;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -14,16 +14,20 @@ import javax.ejb.Local;
  * @author crist
  */
 @Local
-public interface StudentDaoLocal {
+public interface CursoFacadeLocal {
 
-    void addStudent(Student student);
+    void create(Curso curso);
 
-    void editStudent(Student student);
+    void edit(Curso curso);
 
-    void deleteStudent(Integer studentId);
+    void remove(Curso curso);
 
-    Student getStudent(Integer StudentId);
+    Curso find(Object id);
 
-    List<Student> getAllStudents();
+    List<Curso> findAll();
+
+    List<Curso> findRange(int[] range);
+
+    int count();
     
 }
