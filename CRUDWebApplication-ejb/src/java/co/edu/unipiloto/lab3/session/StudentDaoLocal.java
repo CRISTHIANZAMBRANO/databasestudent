@@ -16,14 +16,14 @@ import javax.ejb.Local;
 @Local
 public interface StudentDaoLocal {
 
-    void addStudent(Student student);
+    void añadirStudent(Student student);
 
-    void editStudent(Student student);
+    void editarStudent(Student student);
 
-    void deleteStudent(Integer studentId);
+    void eliminarStudent(Integer studentId);
 
-    Student getStudent(Integer StudentId);
+    Student traerStudent(Integer StudentId);
 
-    List<Student> getAllStudents();
+    List<Student> traerAllStudents();
     
 }

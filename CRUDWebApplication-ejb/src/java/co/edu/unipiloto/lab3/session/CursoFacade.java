@@ -6,6 +6,8 @@
 package co.edu.unipiloto.lab3.session;
 
 import co.edu.unipiloto.lab3.entity.Curso;
+import co.edu.unipiloto.lab3.entity.Student;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,5 +30,31 @@ public class CursoFacade extends AbstractFacade<Curso> implements CursoFacadeLoc
     public CursoFacade() {
         super(Curso.class);
     }
+    @Override
+    public void create(Curso curso) {
+        em.persist(curso);
+    }
+
+    @Override
+    public void edit(Curso curso) {
+        em.merge(curso);
+    }
+
+    @Override
+    public void remove(Integer cursoId ) {
+        em.remove(find(cursoId));
+    }
+
+    @Override
+    public Curso find(Integer cursoId) {
+        return em.find(Curso.class,cursoId);
+    }
+
+    @Override
+    public List<Curso> findAll() {
+        return em.createNamedQuery("Curso.findAll").getResultList();
+    }
+
+   
     
 }

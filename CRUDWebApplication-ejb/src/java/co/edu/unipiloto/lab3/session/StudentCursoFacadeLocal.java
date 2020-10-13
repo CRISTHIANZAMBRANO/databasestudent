@@ -31,5 +31,7 @@ public interface StudentCursoFacadeLocal {
     int count();
     boolean insertarStudentCurso(Integer studentid,Integer codigo_curso,Integer estudiantes_tomando_curso);
     StudentCurso consultaStudentCurso(StudentCursoPK pk);
+    public boolean eliminarClase(int studentid, int cursoid);
+    
     
 }

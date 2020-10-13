@@ -53,7 +53,6 @@ public class Student implements Serializable{
         this.lastname = lastname;
         this.yearLevel = yearLevel;
     }
-    
 
     public Integer getStudentId() {
         return studentId;
@@ -62,6 +61,9 @@ public class Student implements Serializable{
     public void setStudentId(Integer studentId) {
         this.studentId = studentId;
     }
+    
+
+   
 
     public String getFirstname() {
         return firstname;

@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "StudentCurso.findAll", query = "SELECT s FROM StudentCurso s"),
-    @NamedQuery(name = "StudentCurso.findByStudentid", query = "SELECT s FROM StudentCurso s WHERE s.studentCursoPK.studentid = :studentid"),
+    @NamedQuery(name = "StudentCurso.findByStudentid", query = "SELECT s FROM StudentCurso s WHERE s.studentCursoPK.studentid = :studentId"),
     @NamedQuery(name = "StudentCurso.findByCodigoCurso", query = "SELECT s FROM StudentCurso s WHERE s.studentCursoPK.codigoCurso = :codigoCurso"),
     @NamedQuery(name = "StudentCurso.findByEstudiantesTomandoCurso", query = "SELECT s FROM StudentCurso s WHERE s.estudiantesTomandoCurso = :estudiantesTomandoCurso")})
 public class StudentCurso implements Serializable {
@@ -114,5 +114,5 @@ public class StudentCurso implements Serializable {
     public String toString() {
         return "co.edu.unipiloto.lab3.entity.StudentCurso[ studentCursoPK=" + studentCursoPK + " ]";
     }
-    
+
 }

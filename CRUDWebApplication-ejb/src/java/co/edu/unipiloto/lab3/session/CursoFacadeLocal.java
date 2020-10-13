@@ -20,9 +20,9 @@ public interface CursoFacadeLocal {
 
     void edit(Curso curso);
 
-    void remove(Curso curso);
+    void remove(Integer cursoId);
 
-    Curso find(Object id);
+    Curso find(Integer id);
 
     List<Curso> findAll();
 

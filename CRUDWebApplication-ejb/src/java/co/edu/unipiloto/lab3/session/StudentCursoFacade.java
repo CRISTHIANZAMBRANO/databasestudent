@@ -45,5 +45,33 @@ public class StudentCursoFacade extends AbstractFacade<StudentCurso> implements 
     public StudentCurso consultaStudentCurso(StudentCursoPK pk) {
         return em.find(StudentCurso.class, pk);
     }
+    @Override
+    public boolean eliminarClase(int studentid, int cursoid){
+        StudentCursoPK clasePK = new StudentCursoPK(studentid, cursoid);
+        
+        if (consultaStudentCurso(clasePK)==null) {
+            return false;
+        }
+        else{
+            StudentCurso clase = new StudentCurso(clasePK);
+            em.detach(clase);
+            clase = em.merge(clase);
+            em.remove(clase);
+            return true;
+        }
+    }
+    
+    public boolean modificarClase(int studentid, int cursoid, int cantidad){
+        StudentCursoPK clasePK = new StudentCursoPK(studentid, cursoid);
+        
+        if (consultaStudentCurso(clasePK)==null) {
+            return false;
+        }
+        else{
+            StudentCurso clase = new StudentCurso(clasePK, cantidad);
+            em.merge(clase);
+            return true;
+        }
+    }
     
 }

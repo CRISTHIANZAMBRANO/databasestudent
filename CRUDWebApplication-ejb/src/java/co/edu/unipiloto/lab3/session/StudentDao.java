@@ -15,33 +15,45 @@ import javax.persistence.PersistenceContext;
  *
  * @author crist
  */
+
 @Stateless
-public class StudentDao implements StudentDaoLocal {
+public class StudentDao extends AbstractFacade<Student> implements StudentDaoLocal  {
+
     @PersistenceContext
     private EntityManager em;
+
+    public StudentDao() {
+        super(Student.class);
+    }
+    
     @Override
-    public void addStudent(Student student) {
+    public void añadirStudent(Student student) {
         em.persist(student);
     }
 
     @Override
-    public void editStudent(Student student) {
+    public void editarStudent(Student student) {
         em.merge(student);
     }
 
     @Override
-    public void deleteStudent(Integer studentId) {
-        em.remove(getStudent(studentId));
+    public void eliminarStudent(Integer studentId ) {
+        em.remove(traerStudent(studentId));
     }
 
     @Override
-    public Student getStudent(Integer studentId) {
-        return em.find(Student.class, studentId);
+    public Student traerStudent(Integer studentId) {
+        return em.find(Student.class,studentId);
     }
 
     @Override
-    public List<Student> getAllStudents() {
+    public List<Student> traerAllStudents() {
         return em.createNamedQuery("Student.getAll").getResultList();
+    }
+
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
     }
     
 }
